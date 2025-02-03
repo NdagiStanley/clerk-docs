@@ -46,15 +46,15 @@ This guide shows you how to configure passkeys for your Expo application.
         1. In the Clerk Dashboard, navigate to the [**Native Applications**](https://dashboard.clerk.com/last-active?path=native-applications) page.
         1. Select the **iOS** tab.
         1. Fill out the form with the following information:
-            - Your iOS app's **App ID Prefix (Team ID)**
-            - Your iOS app's **Bundle ID**
+           - Your iOS app's **App ID Prefix (Team ID)**
+           - Your iOS app's **Bundle ID**
         1. Look for the text that says "FAPI host" followed by a URL. This URL is your Clerk **Frontend API URL** - copy it as you'll need it in the next step.
 
         ### Update `app.json` in your Expo app
 
         1. In your app's `app.json` file, under the `ios` object, add the `associatedDomains` property as shown in the following example. Replace `<YOUR_FRONTEND_API>` with the value that you copied in the previous step.
 
-        ```json {{ filename: 'app.json', mark: [[5, 12],[14, 20]] }}
+        ```json {{ filename: 'app.json', mark: [[5, 12], [14, 20]] }}
         {
           "expo": {
             //...existing properties
@@ -103,19 +103,19 @@ This guide shows you how to configure passkeys for your Expo application.
 
         ### Install `expo-build-properties` in your Expo application
 
-          <CodeBlockTabs options={["npm", "yarn", "pnpm"]}>
-            ```bash {{ filename: 'terminal' }}
-            npm install expo-build-properties
-            ```
+        <CodeBlockTabs options={["npm", "yarn", "pnpm"]}>
+          ```bash {{ filename: 'terminal' }}
+          npm install expo-build-properties
+          ```
 
-            ```bash {{ filename: 'terminal' }}
-            yarn add expo-build-properties
-            ```
+          ```bash {{ filename: 'terminal' }}
+          yarn add expo-build-properties
+          ```
 
-            ```bash {{ filename: 'terminal' }}
-            pnpm add expo-build-properties
-            ```
-          </CodeBlockTabs>
+          ```bash {{ filename: 'terminal' }}
+          pnpm add expo-build-properties
+          ```
+        </CodeBlockTabs>
 
         ### Update `app.json` in your Expo application
 
@@ -124,11 +124,7 @@ This guide shows you how to configure passkeys for your Expo application.
         ```json {{ filename: 'app.json', mark: [[3, 6], [10, 22]] }}
         {
           "expo": {
-            "plugins": [
-              [
-                "expo-build-properties",
-              ]
-            ],
+            "plugins": [["expo-build-properties"]],
             "android": {
               //...existing properties
               "intentFilters": [
